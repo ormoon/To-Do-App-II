@@ -1,0 +1,99 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+#container {
+  margin: 20px;
+  padding: 10px;
+  background: #ffea0057;
+  border-radius: 10px;
+}
+
+#title {
+  padding-left: 20px;
+}
+
+#input,
+#input:focus {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: transparent;
+  font-size: large;
+  width: 200px;
+}
+
+#note {
+  padding: 5px 20px 20px 20px;
+  display: flex;
+}
+
+#noteArea {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+  background: #ffea0057;
+}
+
+#noteButton {
+  margin-left: 30px;
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 130px;
+  background: #000000;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+#noteArea:focus {
+  background-color: antiquewhite;
+  outline: none;
+}
+
+#noteButton:hover {
+  background: #983ec6;
+}
+
+#savedNotes {
+  margin: 50px 20px 20px 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+fieldset {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+._legend {
+  font-size: 20px;
+}
+
+.save {
+  display: flex;
+}
+
+.deleteButton {
+  position: absolute;
+  right: 25px;
+  bottom: 10px;
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+  background: #000000;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.deleteButton:hover {
+  background: #983ec6;
+}
