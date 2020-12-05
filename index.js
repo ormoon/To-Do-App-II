@@ -2,7 +2,7 @@ const Notes = 'my_note';
 let notesArr = localStorage.getItem(Notes) ? JSON.parse(localStorage.getItem(Notes)) : [];
 let month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 window.onload = function () {
-    displayNotes();
+    displayNotes(notesArr);
 }
 
 function addNote() {
@@ -18,17 +18,20 @@ function addNote() {
     notesArr.push(noteDetail);
     localStorage.setItem(Notes, JSON.stringify(notesArr));
     clearInput();
-    displayNotes();
+    displayNotes(notesArr);
 }
 
 function clearInput() {
     document.getElementById('noteArea').value = null;
     document.querySelector('#input').value = null;
 }
+function clearSearch() {
+    document.querySelector('#search').value = null;
+}
 
-function displayNotes() {
+function displayNotes(notes) {
     let note_html = '';
-    notesArr.forEach((note, index) => {
+    notes.forEach((note, index) => {
         note_html = note_html + `<fieldset>
         <legend class="_legend"> ${note.title}</legend>
         <span>${note.time}</span>
@@ -46,6 +49,11 @@ function displayNotes() {
 function deleteNote(index) {
     notesArr.splice(index, 1);
     localStorage.setItem(Notes, JSON.stringify(notesArr));
-    displayNotes();
+    displayNotes(notesArr);
 }
 
+function searchNote() {
+    let searchKey = document.getElementById('search').value;
+    let searchResult = notesArr.filter(note => (note.title).toLowerCase().indexOf(searchKey.toLowerCase()) != -1);
+    displayNotes(searchResult);
+}

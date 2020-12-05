@@ -9,6 +9,12 @@
     <script src="index.js"></script>
   </head>
   <body>
+    <section>
+      <input type="text" id="search" placeholder="Search note" />
+      <button id="searchButton" onclick="searchNote()">Search</button>
+      <button id="searchButton" onclick="clearSearch()">Clear Search</button>
+    </section>
+
     <div id="container">
       <div id="title">
         <input type="text" id="input" maxlength="26" placeholder="Title" />
@@ -28,4 +34,3 @@
     </div>
   </body>
 </html>
-
